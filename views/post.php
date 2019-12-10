@@ -16,7 +16,17 @@
 
 
     foreach ($comments as $comment) {
-      echo $comment['comment'];
+      ?>
+
+        <div class="commentaire">
+          <h3><?=$comment["name"]?></h3>
+          <p><?=$comment["comment"]?></p>
+          <p><?=$comment["date"]?></p>
+          <span>Signaler</span>
+        </div>
+
+      <?php
+      //echo $comment['comment'];
     };
 
 ?>
@@ -24,7 +34,7 @@
 <hr>
 
 
-  <form method="post">
+  <form method="post" action="index.php?action=addcomment&id=<?=$id?>">
     <div class="formulaire">
 
     <div class="input">

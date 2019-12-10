@@ -64,6 +64,12 @@
                     $controllers->write();
                     break;
 
+                    case "addcomment":
+                      require_once('controllers/homeController.php');
+                      $controllers = new HomeController;
+                      $controllers->addcomment();
+                      break;
+
           }
 
           }else{

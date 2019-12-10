@@ -5,6 +5,7 @@
 require_once('model/home.func.php');
 require_once('model/blog.func.php');
 require_once('model/post.func.php');
+require_once('model/addcomment.func.php');
 
 
    class HomeController {
@@ -51,6 +52,18 @@ require_once('model/post.func.php');
        require_once('views/post.php');
 
      }
+
+     public function addcomment(){
+       $id = $_GET['id'];
+       $name = $_POST['name'];
+       $email = $_POST['email'];
+       $comment = $_POST['comment'];
+       $addcomment = new addcomment();
+       $addcomment-> newcomment($id,$name,$email,$comment);
+       //require_once('views/addcomment.php');
+       header('Location: index.php?action=article&id='.$id);
+     }
+
 
 
    }
