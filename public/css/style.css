@@ -200,6 +200,14 @@ button{
   padding: 10px;
 }
 
+.formulaire{
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 4px solid #4caf50;
+  background-color: #ededed;
+  margin: 20px;
+}
+
 .titre_about
 {
   text-align: center;
@@ -244,4 +252,40 @@ button{
 .container_accueil {
   background-color: #ededed;
   box-shadow: 7px 7px #d1d1d1;
+}
+
+.commentaire{
+  text-align: center;
+  background-color: #ededed;
+  margin: 20px;
+  box-shadow: 3px 3px #4caf50;;;
+  height: 120px;
+  line-height: 0.7;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 1px solid #4caf50;
+}
+
+.commentaire h3{
+  font-weight: 1000;
+}
+
+.commentaire span{
+  background-color: #8c0909;
+  color: white;
+
+}
+
+h2{
+  text-align: center;
+  font-weight: 1000;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 4px solid #4caf50;
+  margin: 15px;
+  margin-bottom: 30px;
 }
