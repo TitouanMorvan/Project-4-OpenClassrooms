@@ -70,6 +70,12 @@
                       $controllers->addcomment();
                       break;
 
+                      case "logout":
+                        require_once('controllers/adminController.php');
+                        $controllers = new AdminController;
+                        $controllers->logout();
+                        break;
+
           }
 
           }else{

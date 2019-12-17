@@ -10,7 +10,7 @@
            <li><a href="index.php?action=write"><i class="fas fa-pen"></i></a></li>
            <li><a href="index.php?action=dashboard"><i class="fas fa-home"></i></a></li>
            <li><a href="index.php?action=accueil">QUITTER</a></li>
-           <li><a href="index.php?page=logout">DECONNEXION</a></li>
+           <li><a href="index.php?action=logout">DECONNEXION</a></li>
          </div>
 
       </ul>

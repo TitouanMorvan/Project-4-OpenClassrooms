@@ -3,7 +3,7 @@
 <?php ob_start(); ?>
 
   <div class="container_accueil">
-
+    <h2>ACCUEIL</h2>
       <div class="image_accueil">
         <img src="public/img/alaska.png" alt="">
       </div>

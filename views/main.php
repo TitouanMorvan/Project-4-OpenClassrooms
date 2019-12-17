@@ -5,7 +5,8 @@
 
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Billet simple pour l'Alaska | <?= $title ?></title>
+        <link rel="icon" type="image/gif" href="public/img/icon.png">
+        <title>Billet simple pour l'Alaska</title>
 
         <!-- Google Font -->
 
@@ -36,7 +37,7 @@
 
 
 
-                  
+
                   <?= $container ?>
 
 

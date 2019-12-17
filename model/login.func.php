@@ -10,15 +10,22 @@ public function is_admin($email,$password)
   include 'model/main-functions.php';
 
   $a = [
-      'email'     =>  $email,
-      'password'  =>  sha1($password)
+      'email'     =>  $email
   ];
-  $sql = "SELECT * FROM admins WHERE email = :email AND password = :password";
+  $sql = "SELECT * FROM admins WHERE email = :email";
   $req = $db->prepare($sql);
   $req->execute($a);
-  $exist = $req->rowCount($sql);
+  //$exist = $req->rowCount($sql);
 
-  if(isset($_POST['submit'])){
+  $results = array();
+
+  while($rows = $req->fetch()){
+    $results[] = $rows;
+  }
+
+  return $results;
+
+  /*if(isset($_POST['submit'])){
               $email = htmlspecialchars(trim($_POST['email']));
               $password = htmlspecialchars(trim($_POST['password']));
 
@@ -26,7 +33,7 @@ public function is_admin($email,$password)
 
               if(empty($email) || empty($password)){
                   $errors['empty'] = "Tous les champs n'ont pas été remplis!";
-              }else if(is_admin($email,$password) == 0){
+              }else if(is_admin($email,$password)== 0){
                   $errors['exist']  = "Cet administrateur n'existe pas";
               }
 
@@ -48,12 +55,12 @@ public function is_admin($email,$password)
       header("Location:index.php?action=dashboard");
     }
 
-  }
+  }*/
 
 
 
-  header("Location:index.php?action=dashboard");
+  //header("Location:index.php?action=error");
 
-  return $exist;
+  return $req;
  }
 }

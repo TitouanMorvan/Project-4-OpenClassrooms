@@ -1,6 +1,7 @@
 <?php ob_start(); ?>
 
 <div class="admin1">
+  <h2>ADMINISTRATEUR</h2>
 <div class="row">
   <div class="col l4 m6 s12 offset-l4 offset-m3">
     <div class="card-panel">
@@ -14,6 +15,18 @@
       <div class="titre-dashboard">
         <h4>SE CONNECTER</h4>
       </div>
+
+      <?php
+
+        if (isset($error)) {
+          ?>
+
+            <p><?= $error ?></p>
+
+          <?php
+        }
+
+       ?>
 
         <form method="post">
           <div class="row">
