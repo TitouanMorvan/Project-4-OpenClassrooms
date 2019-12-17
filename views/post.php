@@ -22,8 +22,19 @@
           <h3><?=$comment["name"]?></h3>
           <p><?=$comment["comment"]?></p>
           <p><?=$comment["date"]?></p>
-          <span>Signaler</span>
+            <!--<span onclick="alert('helo');">SIGNALER</span> -->
+            <input type="button" value="SIGNALER" onClick="ConfirmMessage()">
         </div>
+
+        <script type="text/javascript">
+            function ConfirmMessage() {
+            if (confirm("VOULEZ-VOUS SIGNALER CE COMMENTAIRE ?")) {
+              
+                "#OUI";
+            }
+            }
+        </script>
+
 
       <?php
       //echo $comment['comment'];

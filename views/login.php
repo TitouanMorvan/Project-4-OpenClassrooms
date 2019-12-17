@@ -20,9 +20,9 @@
 
         if (isset($error)) {
           ?>
-
+          <div class="email">
             <p><?= $error ?></p>
-
+          </div>
           <?php
         }
 

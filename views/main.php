@@ -55,9 +55,8 @@
             </script>
 
             <script type="text/javascript" src="public/js/post.func.js">
-
             </script>
-
+            <script type="text/javascript" id="validation" src="../public/js/signale.js"></script>
 
 
         </body>
