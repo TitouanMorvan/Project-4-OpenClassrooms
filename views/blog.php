@@ -3,8 +3,6 @@
 <h2>BLOG</h2>
 
 <?php
-
-//$posts = get_posts();
 foreach($posts as $post){
   ?>
 
@@ -14,17 +12,16 @@ foreach($posts as $post){
 
           <div class="row">
             <div class="col s12 m6 l8">
-              <?= substr(nl2br($post['content']),0,298)?>
+              <?= strip_tags(substr(nl2br($post['content']),0,298))."..."?>
             </div>
             <div class="col s12 m6 l4">
-              <img src="public/img/posts/post2.jpg" alt="<?=$post['title'] ?>"/>
+              <img src="public/img/<?=$post['images'] ?>" alt="<?=$post['title'] ?>"/>
               <br/><br/>
               <a href="index.php?action=article&id=<?= $post['id'] ?>"><button type="button" class="btn btn-primary">Lire l'article complet</button></a>
             </div>
           </div>
         </div>
       </div>
-
 
   <?php
 } ?>

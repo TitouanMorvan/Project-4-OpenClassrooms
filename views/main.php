@@ -8,6 +8,8 @@
         <link rel="icon" type="image/gif" href="public/img/icon.png">
         <title>Billet simple pour l'Alaska</title>
 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
         <!-- Google Font -->
 
         <link href="https://fonts.googleapis.com/css?family=Kodchasan:300|Spicy+Rice" rel="stylesheet">
@@ -26,6 +28,7 @@
         <!-- Style CSS -->
 
         <link href="public/css/style.css" rel="stylesheet" />
+        <link href="public/css/header.css" rel="stylesheet" />
 
         <body>
 
@@ -35,16 +38,9 @@
 
             <div class="container">
 
-
-
-
                   <?= $container ?>
 
-
-
-
             </div>
-
 
             <!-- Jquery -->
 

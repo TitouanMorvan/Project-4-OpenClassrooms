@@ -18,8 +18,6 @@ public function get_one_post($id){
   return $result;
 }
 
-
-
 function get_post(){
   global $db;
 
@@ -33,10 +31,8 @@ function get_post(){
   return $result;
 }
 
-
 public function comment($name,$email,$comment){
 
-    //global $db;
     include 'model/main-functions.php';
 
     $c = array(
@@ -56,7 +52,7 @@ public function comment($name,$email,$comment){
 public function get_comments($id){
 
   include 'model/main-functions.php';
-  //global $db;
+
   $req = $db->query("SELECT * FROM comments WHERE post_id =  '".$id."' ORDER BY date DESC");
   $results = [];
   while($rows = $req->fetch()){

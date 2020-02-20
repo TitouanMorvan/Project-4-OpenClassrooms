@@ -1,49 +1,58 @@
 <?php ob_start(); ?>
 
-<?php
-
-//$post = get_one_post($_GET['id']);
-//if($post == false){
-  //  header("Location:index.php?page=error");
-//}else{
-  ?>
-
     <h2><?= $posts['title'] ?></h2>
-    <h6>Par <?= $posts['writer'] ?> le <?= date("d/m/Y à H:i", strtotime($posts['date'])) ?></h6>
+    <h6>Publié par <?= $posts['writer'] ?> le <?= date("d/m/Y à H:i", strtotime($posts['date'])) ?></h6>
+      <div class="image-post">
+    <img src="public/img/<?=$posts['images'] ?>" alt="<?=$posts['title'] ?>"/>
+      </div>
     <p><?= nl2br($posts['content']); ?></p>
 
   <?php
 
-
     foreach ($comments as $comment) {
+
       ?>
 
         <div class="commentaire">
           <h3><?=$comment["name"]?></h3>
           <p><?=$comment["comment"]?></p>
           <p><?=$comment["date"]?></p>
-            <!--<span onclick="alert('helo');">SIGNALER</span> -->
-            <input type="button" value="SIGNALER" onClick="ConfirmMessage()">
+            <button class="buttonsignale" type="button" id="<?=$comment["id"]?>">SIGNALER</button>
         </div>
 
-        <script type="text/javascript">
-            function ConfirmMessage() {
-            if (confirm("VOULEZ-VOUS SIGNALER CE COMMENTAIRE ?")) {
-              
-                "#OUI";
-            }
-            }
+        <script>
+      var id = "0";
+        $(".buttonsignale").click(function(e){
+        $(".background-modal").css({"display":"block"});
+        id = e.target.id;
+        console.log(id);
+        });
+
+      function signalement(){
+        $.ajax({
+        url : 'index.php?action=signale&id='+id,
+        type : 'GET',
+        dataType : 'html',
+        success : function(code_html, statut){ // success est toujours en place, bien sûr !
+        $(".background-modal").css({"display":"none"});
+        },
+
+        error : function(resultat, statut, erreur){
+          alert('PAS oK');
+        }
+
+        });
+        }
+
         </script>
 
-
       <?php
-      //echo $comment['comment'];
+
     };
 
-?>
+      ?>
 
 <hr>
-
 
   <form method="post" action="index.php?action=addcomment&id=<?=$id?>">
     <div class="formulaire">
@@ -62,12 +71,20 @@
     </div>
 
     <div class="bouton">
-      <button type="submit" name="submit">
+      <button class="bouton_comment" type="submit" name="submit">
         COMMENTER CE POSTE
-      </div>
+    </div>
 
+   </div>
+ </form>
+
+<div class="background-modal">
+  <div class="modal1">
+    <p>Voulez-vous vraiment signaler ce commentaire ?</p>
+      <button onclick="signalement()" type="button" name="oui">OUI</button>
+      <button type="button" value="Back" onClick="history.back()" name="non">NON</button>
+  </div>
 </div>
-  </form>
 
   <?php $container = ob_get_clean(); ?>
 

@@ -7,57 +7,12 @@ body{
   width: 100%;
 }
 
-.light-green{
-  width: 100%;
-  background-color: #333;
-}
-
-.light-red{
-  width: 100%;
-  background-color: #333;
-}
-
-.jean{
-  float: right;
-}
-
 .admin1{
   width: 70%;
   text-align: center;
   margin-left: auto;
   margin-right: auto;
 }
-
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #333;
-}
-
-li {
-  float: left;
-}
-
-li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-/* Change the link color to #111 (black) on hover */
-li a:hover {
-  background-color: #111;
-}
-
-.active {
-  background-color: #4CAF50;
-}
-
-
 
 input[type=text] {
   width: 100%;
@@ -85,10 +40,6 @@ input[type=password] {
   border: none;
   border-bottom: 2px solid #4caf50;
 }
-
-
-
-
 
 #content{
   width: 100%;
@@ -127,16 +78,16 @@ label{
   width: 100%;
 }
 
-button{
+input[type=submit]{
   background-color: #4caf50; /* Green */
   border: none;
   color: white;
-  padding: 15px 32px;
+  padding: 11px 25px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  margin: 4px 2px;
+  margin-top: 30px;
   cursor: pointer;
 }
 
@@ -153,10 +104,13 @@ button{
   padding: 15px 32px;
 }
 
+.tableau-admin {
+  margin-bottom: 45px;
+}
+
 .tableau-admin table{
   width: 100%;
   border-collapse: collapse;
-
 }
 
 .tableau-admin th, td {
@@ -178,7 +132,18 @@ button{
   padding: 5px 6px;
 }
 
+.see_comment1{
+  color: white;
+  border-radius: 20px;
+  background-color: #4caf50;
+  padding: 5px 6px;
+}
+
 .see_comment:hover{
+  color: grey;
+}
+
+.see_comment1:hover{
   color: grey;
 }
 
@@ -189,15 +154,26 @@ button{
   padding: 5px 7px;
 }
 
+.delete_comment1{
+  color: white;
+  border-radius: 20px;
+  background-color: #e54040;
+  padding: 5px 7px;
+}
+
 .delete_comment:hover{
   color: grey;
 }
 
+.delete_comment1:hover{
+  color: grey;
+}
+
 .formulaire_post{
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 10px;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  padding-top: 25px;
 }
 
 .formulaire{
@@ -206,6 +182,49 @@ button{
   border-bottom: 4px solid #4caf50;
   background-color: #ededed;
   margin: 20px;
+}
+
+.formulaire_post label{
+  width: 100%;
+  text-align: center;
+  border: none;
+}
+
+textarea {
+  font-weight: 1000;
+  box-sizing: border-box;
+  border: none;
+  margin: 15px;
+  margin-bottom: 30px;
+  border-bottom: 2px solid #4caf50;
+}
+
+.formulaire_images{
+  text-align: center;
+}
+
+.bouton_article{
+  margin-top: 25px;
+  background-color: #4caf50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.texte_article{
+  box-sizing: border-box;
+  border: none;
+  margin-bottom: 30px;
+}
+
+img{
+  max-width: 70%;
+  height: auto;
 }
 
 .titre_about
@@ -277,7 +296,6 @@ button{
 .commentaire span{
   background-color: #8c0909;
   color: white;
-
 }
 
 h2{
@@ -302,4 +320,85 @@ h2{
   font-size: 16px;
   margin: 2px 2px;
   height: 60px;
+}
+
+h4{
+  text-align: center;
+  font-weight: 1000;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 4px solid #4caf50;
+  margin: 15px;
+  margin-bottom: 50px;
+  margin-top: 50px;
+}
+
+.modal1{
+  width: 400px;
+  height: 150px;
+  background-color: white;
+  box-shadow: 0 0 10px grey;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  text-align: center;
+  padding: 20px;
+}
+
+.background-modal{
+  position: fixed;
+  background-color: rgba(0,0,0,0.5);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+
+.image-post{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.image-post > img {
+  width: 70%;
+}
+
+.delete_comment2 {
+  border-radius: 20px;
+  background-color: #e54040;
+  padding: 5px 7px;
+}
+
+.modif {
+  border-radius: 20px;
+  background-color: #f9c700;
+  padding: 5px 7px;
+  color: black;
+}
+
+.buttonsignale{
+  background-color: #e05050;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.bouton_comment {
+  background-color: #4CAF50;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.bouton_connect{
+  background-color: #4CAF50;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
 }

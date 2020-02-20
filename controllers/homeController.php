@@ -40,8 +40,6 @@ require_once('model/addcomment.func.php');
        $posts = $postFunc->get_one_post($id);
        $commentFunc = new Post();
        $comments = $commentFunc->get_comments($id);
-       //$post_commentFunc = new Post();
-       //$post_comment = $post_commentFunc->comment();
        if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['comment'])) {
          $name = $_POST['name'];
          $email = $_POST['email'];
@@ -60,13 +58,16 @@ require_once('model/addcomment.func.php');
        $comment = $_POST['comment'];
        $addcomment = new addcomment();
        $addcomment-> newcomment($id,$name,$email,$comment);
-       //require_once('views/addcomment.php');
        header('Location: index.php?action=article&id='.$id);
      }
 
+     public function signale(){
 
+       $signaleFunc = new Home();
+       $posts = $signaleFunc->signale_com($_GET['id']);
+
+     }
 
    }
-
 
  ?>
